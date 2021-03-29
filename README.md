@@ -1,3 +1,9 @@
-School assignment
+Chat application
 
-Build a simple chat app server that stores users and conversations in a database.
+Built in Node JS using:
+
+bcrypt,
+ejs,
+express,
+mongoose,
+passport and socket.io
