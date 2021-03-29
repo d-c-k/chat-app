@@ -1,0 +1,33 @@
+<%- include('blocks/topBlock', {title: 'Register'}, logout = false) -%>
+<div class="pageHeader">
+    <p>Register new user</p>
+</div>
+<div class="loginForm">
+    <form method="post" action="/users/register">
+        <label for="email">Email:</label>
+        <input 
+            type="text" 
+            name="email" 
+            id="email"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+        >
+        <label for="username">Username:</label>
+        <input 
+            type="text" 
+            name="username" 
+            id="username"
+            value="<%= typeof username != 'undefined' ? username : '' %>"
+        >
+        <label for="password">Password(min 5 char, [A-Za-z0-9]):</label>
+        <input 
+            type="password" 
+            name="password" 
+            id="password"
+        >
+        <p><br></p>
+        <input type="submit" value=">> Submit >>">
+    </form>
+    <br>
+    <a href="/users/login"><< Go back <<</a>
+</div>   
+<%- include('blocks/bottomBlock') -%>

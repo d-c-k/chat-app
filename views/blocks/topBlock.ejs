@@ -1,0 +1,48 @@
+<% if(typeof title === 'undefined') {title = 'Marix'} %>
+<% if(typeof channel_id === 'undefined'){channel_id = 'general'} %>
+<% if(typeof dm === 'undefined'){dm = ''} %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="statusDiv">
+        <p>Status:</p>
+        <% if(logout){ %>
+            <br><p 
+                id="user" 
+                data-username="<%= user %>"
+                data-userid="<%= id %>"                
+                data-channelid="<%= channel_id %>"
+                data-dm="<%= dm %>"
+            >
+                Logged in as <%= user %>
+            </p>
+        <% } %>   
+        <div id="notifications"></div> 
+        <% if(typeof status_msg != 'undefined') { %>
+            <% status_msg.map(item => { %>
+                <br><p><%= item.msg %></p>
+            <% }) %>
+        <% } %>
+        <% if(success_msg != '') { %>
+            <br><p><%= success_msg %></p>
+        <% } %>
+        <% if(error_msg != '') { %>
+            <br><p><%= error_msg %></p>
+        <% } %>
+        <% if(error != '') { %>
+            <br><p><%= error %></p>
+        <% } %>
+        <% if(logout){ %>            
+            <br><p id="FEmsg"></p>
+            <br><p>----------</p>
+            <br><button type="button" class="menuBtn" id="newChanBtn">>> New Channel >></button><br>
+            <br><a href="/users/logout"><< Log out <<</a>
+        <% } %>
+    </div>

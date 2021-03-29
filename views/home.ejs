@@ -1,0 +1,59 @@
+<%- include('blocks/topBlock', {title: 'Home'}, logout = true) -%>
+
+<div class="pageHeader">
+    <p id="hOne">Users:</p>
+    <p id="hTwo">Chat:</p>    
+</div>
+
+<div class="userList" id="chatList">   
+    <div id="users"></div> 
+    <br>
+    <br>
+    <p>Channels:</p><br>
+    <div id="channels"></div>
+    <br>
+    <br>
+    <% if(typeof users != 'undefined' && users.length > 2) { %>
+        <p>Users in channel:</p>
+        <br>
+        <% users.map(item => { %>
+            <p><%= item.username %></p>
+        <% }) %>
+    <% } %>
+</div>
+
+<div class="chat" id="chatWindow">
+    <div class="chatWindow" id="innerChatWindow">        
+    </div>
+    <br>
+    <form id="form">
+        <input id="input" autocomplete="off" class="chatInput">
+        <button class="chatBtn">SEND</button>
+    </form>
+</div>
+
+<div class="userList" id="newChatList">
+    <div id="newChatUsers"></div>     
+</div>
+
+<div class="channelEdit" id="newChatWindow">
+    <form method="post" action="/new_channel">
+        <label for="channelName">Channel name:</label>
+        <input type="text" name="channelName" id="channelName">
+        <br><br>
+        <p>Included users:</p>
+        <ul id="listedUsers">
+            <li id="initial"> <%= user %></li>
+        </ul>
+        <br>
+        <input type="hidden" name="store" id="store">
+        <input type="submit" value=">> Create channel >>">
+    </form>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/scripts/chatSocket.js"></script>
+<script src="/scripts/addUser.js"></script>
+<script src="/scripts/layout.js"></script>
+
+<%- include('blocks/bottomBlock') -%>

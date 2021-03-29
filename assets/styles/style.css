@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    outline: none;
+    color: #008f11;
+    font-family: 'Consolas', monospace;
+}
+
+body{
+    background: black;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 1.2rem;
+    grid-template-rows: 2fr auto 17fr;
+    grid-row-gap: 1.2rem;
+}
+
+input {
+    box-sizing: border-box;
+    background: black;
+    border: 1px solid #008f11;
+    font-size: 1rem;
+    padding-left: .25rem;
+    width: 100%
+}
+
+input[type=submit] {
+    border: none;
+    text-align: left;
+    padding: 0;
+    cursor: pointer;
+}
+
+button {
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid #008f11;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #008f11;
+    color: black;
+}
+
+ul {
+    list-style-type: '+';
+    list-style-position: inside;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid #008f11;
+  -webkit-text-fill-color: #008f11;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #008f11;
+  }
+
+
+/*||||||||||||||||||||||||||||||||||*/
+/*||||||||||| CUSTOM DIVS ||||||||||*/
+/*||||||||||||||||||||||||||||||||||*/
+
+.statusDiv {
+    grid-column: 2;
+    grid-row: 2/4;
+}
+
+.pageHeader {
+    display: grid;
+    grid-column: 3/6;
+    grid-row: 2;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1rem;
+}
+
+.loginForm {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.userList {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.chat {
+    grid-column: 4/6;
+    grid-row: 3/4;
+}
+
+.chatWindow{
+    border: 1px solid #008f11;
+    height: 50vh;
+    padding: 1.2rem;
+    overflow-y: scroll;
+    position : relative; bottom:0;
+}
+
+.chatInput {
+    box-sizing: border-box;
+    background: black;
+    border: 1px solid #008f11;
+    font-size: 1rem;
+    padding-left: .25rem;
+    width: 80%
+}
+
+.chatBtn {
+    float: right;
+    width: 15%;
+}
+
+.channelEdit {    
+    grid-column: 4;
+    grid-row: 3/4;
+}
+
+.userBtn, .userBtn:hover {
+    background: none;
+    border: none;
+    color: #008f11;
+}
+
+.menuBtn, .menuBtn:hover {
+    background: none;
+    border: none;
+    color: #008f11;
+}
